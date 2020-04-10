@@ -1,4 +1,4 @@
-import { ADD_FEATURE } from '../actions';
+import { ADD_FEATURE, REMOVE_FEATURE } from '../actions';
 
 const carState = {
     additionalPrice: 0,
@@ -21,6 +21,8 @@ const carState = {
         switch(action.type) {
             case ADD_FEATURE:
                 return 
+            case REMOVE_FEATURE:
+                return    
             default:
                 return state;
         }
