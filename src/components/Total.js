@@ -15,7 +15,7 @@ const Total = props => {
     </div>
   );
 };
-
+//I forget to start on my named branch
 const mapStateToProps = (state) => {
   return {
     price: state.car.price,
