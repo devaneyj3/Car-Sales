@@ -29,10 +29,7 @@ const carState = {
                             price: action.price
                         }],
                     },
-                    additionalPrice: state.car.price + state.car.features.price
                 }
-                //state.car.features.reduce((acc, current) => acc =+ current)
-            
             case REMOVE_FEATURE:
                 return {
                     ...state,
