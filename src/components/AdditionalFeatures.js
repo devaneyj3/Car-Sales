@@ -4,8 +4,10 @@ import { addFeature } from '../actions';
 import { connect } from 'react-redux';
 
 const AdditionalFeatures = props => {
+  
   return (
     <div className="content">
+      { props.elementExist !== -1 && props.features.length !== 0 ? <span className='warning'>This feature has already been added.</span>: null }
       <h4>Additional Features</h4>
       {props.additionalFeatures.length ? (
         <ol type="1">
@@ -21,7 +23,9 @@ const AdditionalFeatures = props => {
 };
 const mapStateToProps = (state) => {
   return {
-    additionalFeatures: state.additionalFeatures
+    additionalFeatures: state.additionalFeatures,
+    elementExist: state.car.elementExist,
+    features: state.car.features
   }
 }
 

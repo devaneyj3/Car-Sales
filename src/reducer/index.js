@@ -7,7 +7,8 @@ const carState = {
     name: '2019 Ford Mustang',
     image:
         'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
-    features: []
+    features: [],
+    elementExist: false
         },
     additionalFeatures: [
         { id: 1, name: 'V-6 engine', price: 1500 },
@@ -15,7 +16,8 @@ const carState = {
         { id: 3, name: 'Premium sound system', price: 500 },
         { id: 4, name: 'Rear spoiler', price: 250 }
         ]
-    };
+    }
+    
 
     export const carReducer = (state = carState, action) => {
         switch(action.type) {
@@ -25,12 +27,16 @@ const carState = {
                     return {
                         ...state,
                         car: {...state.car,
-                            features: [...state.car.features, action.payload]
+                            features: [...state.car.features, action.payload],
+                            elementExist: index
                         },
                     }
                 } else {
                     return {
-                        ...state
+                        ...state,
+                        car: { ...state.car,
+                            elementExist: index
+                        }
                     }
                 }
             case REMOVE_FEATURE:
