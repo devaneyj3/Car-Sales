@@ -27,11 +27,19 @@ const carState = {
                             name: action.payload,
                             id: action.id,
                             price: action.price
-                    }]
+                        }],
+                    },
+                    additionalPrice: state.car.price + state.car.features.price
                 }
-                }
+                //state.car.features.reduce((acc, current) => acc =+ current)
+            
             case REMOVE_FEATURE:
-                return    
+                return {
+                    ...state,
+                    car: {...state.car, 
+                        features: [...state.car.features.filter((feature, index) => action.index !== index)]
+                    }
+                }  
             default:
                 return state;
         }
