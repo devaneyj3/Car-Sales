@@ -20,15 +20,18 @@ const carState = {
     export const carReducer = (state = carState, action) => {
         switch(action.type) {
             case ADD_FEATURE:
-                return {
-                    ...state,
-                    car: {...state.car,
-                        features: [...state.car.features, {
-                            name: action.payload,
-                            id: action.id,
-                            price: action.price
-                        }],
-                    },
+                let index = state.car.features.findIndex(el => el.id === action.payload.id);
+                if (index === -1) {
+                    return {
+                        ...state,
+                        car: {...state.car,
+                            features: [...state.car.features, action.payload]
+                        },
+                    }
+                } else {
+                    return {
+                        ...state
+                    }
                 }
             case REMOVE_FEATURE:
                 return {

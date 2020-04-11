@@ -5,9 +5,11 @@ export const ADD_TOTAL = 'ADD_TOTAL';
 export const addFeature = (name, id, price) => {
     return {
         type: ADD_FEATURE,
-        payload: name,
-        id,
-        price
+        payload: {
+            name,
+            id,
+            price
+        }
     }
 
 }

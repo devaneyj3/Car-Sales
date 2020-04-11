@@ -6,7 +6,6 @@ const Total = props => {
     const totalPrice = props.features.reduce((acc, current) => {
       return acc += current.price
     }, props.additionalPrice);
-    console.log(totalPrice)
 
 
   return (

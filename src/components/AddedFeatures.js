@@ -6,6 +6,7 @@ import { removeFeature } from '../actions';
 import AddedFeature from './AddedFeature';
 
 const AddedFeatures = props => {
+
   return (
     <div className="content">
       <h6>Added features:</h6>
@@ -23,7 +24,7 @@ const AddedFeatures = props => {
 };
 const mapStateToProps = (state) => {
   return {
-    features: state.car.features
+    features: state.car.features,
   }
 }
 
